@@ -1,0 +1,85 @@
+html,
+body {
+  @extend %sans-serif;
+  width: 100%;
+  color: $white;
+  background-color: $bg;
+}
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50 * $em;
+  padding: 2em 0;
+}
+
+blockquote {
+  margin: 0;
+  border-left: (0.12 * $em) solid $white;
+  padding: (0.25 * $em) $em (0.25 * $em) (0.88 * $em);
+}
+
+.dark {
+  background-color: $dark;
+  color: $white;
+
+  blockquote {
+    border-color: $white;
+  }
+}
+
+.light {
+  background-color: $light;
+}
+
+.result {
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  font-size: 3em;
+  line-height: 64px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  font-size: 2rem;
+  img,
+  [role="img"] {
+    animation: rotation 2s infinite linear;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .result {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  section {
+    width: auto;
+    padding: 1rem;
+  }
+}
+
+footer {
+  padding: 1.5em;
+  text-align: center;
+}
+
+.splash {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

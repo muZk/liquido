@@ -1,0 +1,25 @@
+input, button {
+  @extend %sans-serif;
+  border-radius: .2 * $em;
+  display: inline-block;
+}
+
+input {
+  padding: .3 * $em .35 * $em;
+  border: 1px solid $white;
+}
+
+button {
+  cursor: pointer;
+  padding: .3625 * $em 1.3 * $em;
+  text-align: center;
+
+  background: $accent;
+  color: $white;
+  border: none;
+
+  &:hover {
+    background: darken($accent, 15);
+    color: darken($white, 25);
+  }
+}

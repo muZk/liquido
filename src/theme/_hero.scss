@@ -1,0 +1,33 @@
+.hero {
+  text-align: center;
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $em;
+  
+    input {
+      width: 100px;
+      max-width: 200px;
+      flex-grow: 1;
+      margin-top: 0 !important;
+    }
+  
+    button {
+      margin-left: 0.5rem;
+    }
+  }
+
+  h1 {
+    margin-top: $em;
+  }
+
+  h2 {
+    font-size: 1.44rem;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+  }
+}

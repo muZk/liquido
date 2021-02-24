@@ -1,0 +1,32 @@
+.text-danger {
+  color: $red;
+}
+
+.text-success {
+  color: $green;
+}
+
+.text-center {
+  text-align: center;
+}
+
+code {
+  font-weight: bold;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
+a {
+  color: $white;
+}
+
+code {
+  padding: 1px 5px;
+  border-radius: 3px;
+  background-color: $bg;
+}

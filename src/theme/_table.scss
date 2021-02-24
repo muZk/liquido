@@ -1,0 +1,28 @@
+table {
+  display: table;
+  overflow: auto;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $bg;
+  margin: 2rem 0;
+}
+
+td, th {
+  border-bottom: (.06 * $em) solid $white;
+  padding: .825 * $em $em;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr.active {
+  color: $accent;
+  font-weight: bold;
+  background-color: lighten($color: $white, $amount: 5%);
+}
+
+@media (max-width: 767px) {
+  table {
+    display: block;
+    max-width: 100%;
+  }
+}

@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Líquido💰: calcula tu sueldo líquido cuando trabajas para una empresa de USA de forma remota
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Lighthouse](lighthouse.svg)](https://github.com/muZk/liquido)
 
-## Available Scripts
+Calculadora que te permite estimar cual será **tu sueldo líquido** REAL cuando trabajas desde Chile 🇨🇱 para una empresa de USA 🇺🇸.
 
-In the project directory, you can run:
+Live en: https://remoto.netlify.app/
 
-### `yarn start`
+## Cómo se hace el cálculo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Cuando trabajas de manera remota desde CHILE para USA, ocurre lo siguiente:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Te pagan en dólares.
+- Eres trabajador independiente para el estado de Chile, aunque tengas contrato.
+- Hay comisiones que le cobran a tu empleador por enviar la plata, y a ti por recibirla.
+- Como trabajador independiente en Chile, mes a mes tienes que hacer tu boleta de honorarios, y pagar tú mismo la retención.
+- Como trabajador independiente en Chile, año a año tienes que hacer tu "declaración de renta" donde pagas impuestos y cotizaciones.
 
-### `yarn test`
+Es decir, hay muchas cosas que afectan en tu sueldo líquido real. Esta calculadora se preocupa de entregarte un número realista de lo que vas a recibir con base a los siguientes supuestos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- El valor dólar que te da el banco es el mismo que aparece en el SII (no siempre es así).
+- Te pagan por transferencia internacional. El banco gringo te cobra `20 USD` y el Chileno `0`.
+- Par los impuestos y cotizaciones, [ver aquí](https://github.com/muZk/impuestos#supuestos-para-el-c%C3%A1lculo).
 
-### `yarn build`
+## Finalmente... el cálculo:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+  sueldoLiquidoMensual = (12 * ((INCOME - BANK_FEE) * USD_CLP) - RETENCION - DEUDA_SII) / 12
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `INCOME` = la cantidad de dólares que te mandan.
+- `USD_CLP` = el valor dólar según SII
+- `BANK_FEE` = comisión que cobra el banco gringo por recibir la plata (`20 USD`)
+- `RETENCION` = la retención de las boletas que pagas mes a mes al SII.
+- `DEUDA_SII` = lo que tendrás que pagarle al SII en la declaración de renta por impuestos y cotizaciones.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`RETENCION` y `DEUDA_SII` dependen del año. Si quieres saber cómo se calcula, te sugiero ver [este repositorio](https://github.com/muZk/impuestos) y [esta app](https://impuestos.netlify.app/). De hecho, "Liquido" utiliza la librería [tax-cl](https://github.com/muZk/tax-cl) para el cálculo.
 
-### `yarn eject`
+## FAQ
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **_"¿Por qué recibir por banco si los bancos valen 💩?"_**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. La comisión del banco gringo es entre `20` y `50 USD` fijos.
+2. La comisión del banco chileno es entre 0 y 0.6% (dependiendo del banco).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Es decir, las comisiones son bajas comparadas con otras opciones.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Además, con banco puedes tener una cuenta en dólares, donde se te deposita tu sueldo automáticamente. Luego, puedes venderle los dólares al mismo banco.
 
-## Learn More
+### **_"¿Cómo hago la boleta si me pagan en USD y tengo que hacerla en CLP?"_**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Tienes que hacer la boleta, el RUT tiene que ser 44.444.444-4 (extranjeros sin RUT), y la dirección da lo mismo.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Luego, el monto de la boleta lo calculas así:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Obtén el valor del dólar [según el SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2021.htm) para el día en que te llegó la plata.
+2. El monto en dólares que te llegó, multiplícalo por el valor obtenido.
+3. Haz la boleta de honorarios por ese monto. En la descripción, coloca "Equivalente a X USD" (donde `X` es lo que te llegó).

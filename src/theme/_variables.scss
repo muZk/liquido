@@ -1,0 +1,26 @@
+$em: 18px;
+
+// fonts
+$sans-serif: 'Rubik', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+// colors
+$white: #ECEFF4;
+$accent: #bf616a;
+$red: #bf616a;
+$green: #a3be8c;
+$bg: #001233;
+$dark: #001845;
+$light: #023E7D;
+
+// responsive
+$mobile-width: 767px;
+
+%sans-serif {
+  font-family: $sans-serif;
+  font-size: $em;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.65 * $em;
+}

@@ -1,0 +1,53 @@
+h1, h2, h3 {
+  color: $white;
+  margin-bottom: $em;
+  line-height: 1.15;
+}
+
+// Font sizes uses "Minor Third" from https://type-scale.com
+
+h1 {
+  font-size: 2.488em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.074em;
+  margin-top: 3em;
+}
+
+h3 {
+  font-size: 1.728em;
+  margin-top: 2em;
+}
+
+.dark {
+  h1, h2, h3 {
+    color: #ECEFF4;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: rgba(216, 222, 233, 0.5);
+    width: 100%;
+    margin: 1.2rem auto;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  // "Major Second" for Mobile (https://type-scale.com)
+
+  h1 {
+    font-size: 1.802em;
+  }
+  
+  h2 {
+    font-size: 1.602em
+  }
+  
+  h3 {
+    font-size: 1.424em;
+  }
+}
