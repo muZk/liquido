@@ -10,14 +10,14 @@ export default function Result({ income, usd }) {
     <>
       <div className="light">
         <section className="result">
-          Tu sueldo líquido REAL* es ~<strong>${formatAmount(takeHome.value)} CLP</strong>
+          Tu sueldo líquido REAL* es ~<strong>{formatAmount(takeHome.value)}</strong>
           <hr/>
           <small>
-            ~<strong>${formatAmount(takeHomePartial.value)} CLP</strong> si eliges una cotización parcial.
+            ~<strong>{formatAmount(takeHomePartial.value)}</strong> si eliges una cotización parcial.
           </small>
         </section>
         <div className="text-center">
-          <small>*: considerando las cotizaciones (AFP, Salud) e impuestos.</small>
+          <small>*considerando las cotizaciones (AFP, Salud) e impuestos.</small>
         </div>
       </div>
       <Details

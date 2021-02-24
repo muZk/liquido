@@ -81,24 +81,24 @@ export default function Details({ takeHome, takeHomePartial }) {
         </p>
         <blockquote>
           Esta retención se usa para pagar impuestos y obligaciones legales
-          tales como AFP y salud (fonasa o isapre) en la "operación renta".
+          tales como AFP y salud (Fonasa o Isapre) en la "operación renta".
         </blockquote>
         <p>
           En la declaración anual de renta tienes que pagar las cotizaciones 
-          obligatorias de SALUD y JUBILACIÓN, cuyos montos dependen de cuanto ganas.
+          obligatorias de SALUD y JUBILACIÓN, cuyos montos dependen de cuánto ganas.
           Puedes ver el detalle <a href="https://impuestos.netlify.com" target="_blank" rel="noreferrer">aquí</a>
         </p>
         <h3>Ahora si... el cálculo</h3>
         <p>
-          Te mandan mensualmente <code>{income} USD</code>, pero hay que restarle la comisión del banco extranjero
-          lo cual es <code>{bankFee} USD</code>.
+          Te mandan mensualmente <code>USD{formatAmount(income)}</code>, pero hay que restarle la comisión del banco extranjero
+          lo cual es <code>USD{formatAmount(bankFee)}</code>.
         </p>
         <p>
-          Por lo tanto, te llegan <code>{income - bankFee} USD</code> a Chile. Sobre esto hay que calcular el líquido.
+          Por lo tanto, te llegan <code>USD{formatAmount(income - bankFee)}</code> a Chile. Sobre esto hay que calcular el líquido.
         </p>
         <p>
           Tu <strong>ingreso bruto anual</strong> en pesos chilenos es
-          <code>${formatAmount(sueldoAnual)}</code> (valor dolar = <code>{usd}</code>)
+          <code>{formatAmount(sueldoAnual)}</code> (valor dólar = <code>{formatAmount(usd)}</code>)
         </p>
         <Detail
           retention={retencion}

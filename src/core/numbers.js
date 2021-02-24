@@ -4,5 +4,5 @@ const CLPFormat = new Intl.NumberFormat("es", {
 });
 
 export function formatAmount(number) {
-  return CLPFormat.format(number.toFixed(2)).replace("CLP", "").trim();
+  return  `$${CLPFormat.format(number.toFixed(2)).replace("CLP", "").trim()}`;
 }
