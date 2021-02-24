@@ -1,5 +1,6 @@
 # Líquido💰: calcula tu sueldo líquido cuando trabajas para una empresa de USA de forma remota
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7abbb2de-b167-45ae-8d03-1db8591278ce/deploy-status)](https://app.netlify.com/sites/remoto/deploys)
 [![Lighthouse](lighthouse.svg)](https://github.com/muZk/liquido)
 
 Calculadora que te permite estimar cual será **tu sueldo líquido** REAL cuando trabajas desde Chile 🇨🇱 para una empresa de USA 🇺🇸.
