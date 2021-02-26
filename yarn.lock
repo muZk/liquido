@@ -10707,10 +10707,10 @@ tar@^6.0.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tax-cl@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/tax-cl/-/tax-cl-1.0.0.tgz#51dce4d71e08a344fefd788e57a4afa3053e7e71"
-  integrity sha512-7dERAski1PPbV3iB+klFyL9/1t4w4Yp4T7Z0Wb3PViwpE3DVQgMU2JY+D32iOwKxv4ctgj/60cishFlKw3Ma+Q==
+tax-cl@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tax-cl/-/tax-cl-1.0.1.tgz#c562dbbb014ac7852c7e4e7b6784802802f4e47e"
+  integrity sha512-8dDQQvKggen/MgfkvnpHwVKbnBvO8u2uj3SyewpTYi+BuUf6M0rW5nfPAqxYG8lfSDJZkVeE/Q0P/h1tuog4Dg==
 
 temp-dir@^1.0.0:
   version "1.0.0"
