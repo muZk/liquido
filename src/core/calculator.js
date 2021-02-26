@@ -1,4 +1,6 @@
-import { calcular, obtenerConfiguracion } from "tax-cl";
+import { calcular, obtenerConfiguracion, configurarDeclaracion } from "tax-cl";
+
+configurarDeclaracion(new Date().getFullYear());
 
 const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
 
