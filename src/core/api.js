@@ -2,7 +2,13 @@
 export const DEFAULT_USD_VALUE = 700;
 
 export async function fetchUsdValue() {
-  const date = new Date();
+  let date = new Date();
+  if (date.getDay() === 6) {
+    date = new Date(date - 24 * 60 * 60 * 1000);
+  } else if (date.getDay() === 0) {
+    date = new Date(date - 48 * 60 * 60 * 1000);
+  }
+
   const month = date.getMonth() + 1;
   const today = `${date.getDate()}-${month < 10 ? `0${month}` : month}-${date.getFullYear()}`;
   try {
