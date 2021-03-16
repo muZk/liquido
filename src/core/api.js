@@ -2,7 +2,7 @@
 export const DEFAULT_USD_VALUE = 700;
 
 export async function fetchUsdValue() {
-  var date = new Date();
+  let date = new Date();
   if (date.getDay() > 5) {
     date = new Date(date.setDate(date.getDate() - (date.getDay() - 5)))
   }
