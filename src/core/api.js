@@ -3,8 +3,10 @@ export const DEFAULT_USD_VALUE = 700;
 
 export async function fetchUsdValue() {
   let date = new Date();
-  if (date.getDay() > 5) {
-    date = new Date(date.setDate(date.getDate() - (date.getDay() - 5)))
+  if (date.getDay() === 6) {
+    date = new Date(date - 24 * 60 * 60 * 1000);
+  } else if (date.getDay() === 0) {
+    date = new Date(date - 48 * 60 * 60 * 1000);
   }
 
   const month = date.getMonth() + 1;
