@@ -6,7 +6,9 @@ import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
 const Result = lazy(() => import("./Result"));
 
 function App() {
-  const [income, setIncome] = useState(4000);
+  const queryParams = new URLSearchParams(window.location.search);
+  const amount = parseInt(queryParams.get("amount")) || 4000;
+  const [income, setIncome] = useState(amount);
   const [showResults, setShowResults] = useState(false);
   const [usd, setUsd] = useState(DEFAULT_USD_VALUE);
 
