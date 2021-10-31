@@ -69,6 +69,8 @@ export default function Details({ takeHome, takeHomePartial }) {
     },
   } = takeHome;
 
+  const sueldoMensual =  Math.floor(sueldoAnual/12);
+
   return (
     <div className="dark">
       <section>
@@ -86,7 +88,7 @@ export default function Details({ takeHome, takeHomePartial }) {
         <p>
           En la declaración anual de renta tienes que pagar las cotizaciones 
           obligatorias de SALUD y JUBILACIÓN, cuyos montos dependen de cuánto ganas.
-          Puedes ver el detalle <a href="https://impuestos.netlify.com" target="_blank" rel="noreferrer">aquí</a>
+          Puedes ver el detalle <a href={`https://impuestos.netlify.com/?income=${sueldoMensual}`} target="_blank" rel="noreferrer">aquí</a>
         </p>
         <h3>Ahora si... el cálculo</h3>
         <p>
