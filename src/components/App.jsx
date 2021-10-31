@@ -6,11 +6,18 @@ import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
 const Result = lazy(() => import("./Result"));
 
 function App() {
-  const queryParams = new URLSearchParams(window.location.search);
-  const amount = parseInt(queryParams.get("amount")) || 4000;
-  const [income, setIncome] = useState(amount);
+  const [income, setIncome] = useState(4000);
   const [showResults, setShowResults] = useState(false);
   const [usd, setUsd] = useState(DEFAULT_USD_VALUE);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const incomeParam = parseInt(queryParams.get("income"));
+    if (incomeParam) {
+      setIncome(incomeParam);
+      setShowResults(true);
+    }
+  }, []);
 
   useEffect(() => {
     fetchUsdValue().then(setUsd);
