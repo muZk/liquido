@@ -50,7 +50,7 @@ Además, con banco puedes tener una cuenta en dólares, donde se te deposita tu 
 
 ### **_"¿Cómo hago la boleta si me pagan en USD y tengo que hacerla en CLP?"_**
 
-Tienes que hacer la boleta, el RUT tiene que ser 44.444.444-4 (extranjeros sin RUT), y la dirección da lo mismo.
+Tienes que hacer la boleta, el RUT tiene que ser 44.444.446-0, que corresponde a un RUT especial para "extranjeros sin RUT" ([fuente](https://www.sii.cl/preguntas_frecuentes/boleta_honorario_electr/001_120_3748.htm)), y la dirección da lo mismo.
 
 Luego, el monto de la boleta lo calculas así:
 
