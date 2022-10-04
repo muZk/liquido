@@ -1,5 +1,5 @@
 
-export const DEFAULT_USD_VALUE = 700;
+export const DEFAULT_USD_VALUE = 850;
 
 export async function fetchUsdValue() {
   let date = new Date();
