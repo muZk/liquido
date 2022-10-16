@@ -31,7 +31,6 @@ Es decir, hay muchas cosas que afectan en tu sueldo líquido real. Esta calculad
 
 - `INCOME` = la cantidad de dólares que te mandan.
 - `USD_CLP` = el valor dólar según SII
-- `BANK_FEE` = comisión que cobra el banco gringo por recibir la plata (`20 USD`)
 - `RETENCION` = la retención de las boletas que pagas mes a mes al SII.
 - `DEUDA_SII` = lo que tendrás que pagarle al SII en la declaración de renta por impuestos y cotizaciones.
 
