@@ -2,7 +2,7 @@ import React from "react";
 import { formatAmount } from "../core/numbers";
 
 export default function Assumptions({ assumptions }) {
-  const { usd, bankFee } = assumptions;
+  const { usd } = assumptions;
   return (
     <>
       <h2>Supuestos para el cálculo:</h2>
@@ -14,9 +14,6 @@ export default function Assumptions({ assumptions }) {
         <li>
           Te pagan en dólares, y te transfieren mediante{" "}
           <a href="https://transferwise.com/es/help/articles/2553074/pagando-mediante-swift" target="_blank" rel="noreferrer">transferencia bancaria internacional SWIFT</a>.
-        </li>
-        <li>
-          La comisión que cobra el banco extranjero es <code>USD{formatAmount(bankFee)}</code>.
         </li>
         <li>
           Tu banco no te cobra comisión por recibir los dólares.
