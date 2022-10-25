@@ -59,7 +59,6 @@ export default function Details({ takeHome, takeHomePartial }) {
     income,
     assumptions: {
       usd,
-      bankFee,
       retencion,
       deudaModalidadParcial,
       deuda,
@@ -92,11 +91,7 @@ export default function Details({ takeHome, takeHomePartial }) {
         </p>
         <h3>Ahora si... el cálculo</h3>
         <p>
-          Te mandan mensualmente <code>USD{formatAmount(income)}</code>, pero hay que restarle la comisión del banco extranjero
-          lo cual es <code>USD{formatAmount(bankFee)}</code>.
-        </p>
-        <p>
-          Por lo tanto, te llegan <code>USD{formatAmount(income - bankFee)}</code> a Chile. Sobre esto hay que calcular el líquido.
+          Te mandan mensualmente <code>USD{formatAmount(income)}</code>, sobre esto hay que calcular el líquido.
         </p>
         <p>
           Tu <strong>ingreso bruto anual</strong> en pesos chilenos es
