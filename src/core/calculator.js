@@ -5,7 +5,7 @@ configurarDeclaracion(new Date().getFullYear() + 1);
 const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
 
 export function getTakeHomeSalary(usdMonthlyIncome, usdToClp) {
-  const clpMonthlyIncome = usdMonthlyIncome * usdToClp;
+  const clpMonthlyIncome = usdMonthlyIncome * usdToClp.value;
   const taxes = calcular(clpMonthlyIncome);
   const { deuda: debt, retencion } = taxes;
   const takeHome = 12 * clpMonthlyIncome - retencion - debt;
@@ -23,7 +23,7 @@ export function getTakeHomeSalary(usdMonthlyIncome, usdToClp) {
 }
 
 export function getTakeHomeSalaryPartial(usdMonthlyIncome, usdToClp) {
-  const clpMonthlyIncome = usdMonthlyIncome * usdToClp;
+  const clpMonthlyIncome = usdMonthlyIncome * usdToClp.value;
   const taxes = calcular(clpMonthlyIncome);
   const { deudaModalidadParcial: debt, retencion } = taxes;
   const takeHome = 12 * clpMonthlyIncome - retencion - debt;
