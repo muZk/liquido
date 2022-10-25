@@ -8,7 +8,12 @@ const Result = lazy(() => import("./Result"));
 function App() {
   const [income, setIncome] = useState(4000);
   const [showResults, setShowResults] = useState(false);
-  const [usd, setUsd] = useState(DEFAULT_USD_VALUE);
+  const [usd, setUsd] = useState(
+    {
+      valor: DEFAULT_USD_VALUE,
+      origin: 'default',
+    }
+  );
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);

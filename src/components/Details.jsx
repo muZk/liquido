@@ -100,7 +100,7 @@ export default function Details({ takeHome, takeHomePartial }) {
         </p>
         <p>
           Tu <strong>ingreso bruto anual</strong> en pesos chilenos es
-          <code>{formatAmount(sueldoAnual)}</code> (valor dólar = <code>{formatAmount(usd)}</code>)
+          <code>{formatAmount(sueldoAnual)}</code> (valor dólar = <code>{formatAmount(usd.value)}</code>)
         </p>
         <Detail
           retention={retencion}

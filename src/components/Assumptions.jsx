@@ -3,13 +3,24 @@ import { formatAmount } from "../core/numbers";
 
 export default function Assumptions({ assumptions }) {
   const { usd, bankFee } = assumptions;
+
+  const getUsdDetails = () => {
+    if (usd.origin === 'SII') {
+      return  <a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2021.htm" target="_blank" rel="noreferrer">valor dólar hoy según SII</a>
+    } else if (usd.origin === 'SBIF') {
+      return <span>Valor entregado por <a href="https://www.sbif.cl" target="_blank" rel="noreferrer">CMF Bancos</a></span>
+    } else {
+      return 'Valor promedio del dólar durante el año 2022'
+    }
+  }
+
   return (
     <>
       <h2>Supuestos para el cálculo:</h2>
       <ul>
         <li>
-          Valor Dólar: <code>{formatAmount(usd)}</code>{" "}
-          (<a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2021.htm" target="_blank" rel="noreferrer">valor dólar hoy según SII</a>)
+          Valor Dólar: <code>{formatAmount(usd.value)}</code>{" "}
+          ({getUsdDetails()})
         </li>
         <li>
           Te pagan en dólares, y te transfieren mediante{" "}
