@@ -5,7 +5,7 @@
 
 Calculadora que te permite estimar cual será **tu sueldo líquido** REAL cuando trabajas desde Chile 🇨🇱 para una empresa de USA 🇺🇸.
 
-Live en: https://remoto.netlify.app/
+Live en: https://calculadora.trabajoremoto.cl/
 
 ## Cómo se hace el cálculo
 
