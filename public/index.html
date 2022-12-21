@@ -36,25 +36,28 @@
     <!-- / Fathom -->
     <!-- Politepop -->
     <script>
-      let politeScript = document.createElement("script");
-      politeScript.src = "https://cdn.politepop.com/polite-pop-v1.4.17/polite-pop.min.js";
-      politeScript.onload = () => {
-        PolitePop({
-          politePopHtml: "<p>Hey, ¿te interesa saber más sobre trabajo remoto desde Chile hacia el extranjero?</p>",
-          politePopYesText: "Sí, claro!",
-          politePopNoText: "No gracias",
-          exitIntentPopHtml: "<p>Hey, ¿te interesa saber más sobre trabajo remoto desde Chile hacia el extranjero?</p>",
-          exitIntentPopYesText: "Sí, claro!",
-          exitIntentPopNoText: "No gracias",
-          modalHtml: "<p>Estoy creando contenido sobre esta temática. Suscríbete para no perderte el contenido.</p>",
-          modalSubscribeButtonText: "Suscríbeme!",
-          modalShowNameField: false,
-          signupFormAction: "https://app.convertkit.com/forms/3852435/subscriptions",
-          newEmailSignupSuccessMessage: "Listo! 🎉 Revisa tu correo.",
-          newEmailSignupErrorMessage: "Ocurrió un error al suscribirte"
-        });
+      if (navigator.userAgent != "ReactSnap") {
+        let politeScript = document.createElement("script");
+        politeScript.src = "https://cdn.politepop.com/polite-pop-v1.4.17/polite-pop.min.js";
+        politeScript.defer = true;
+        politeScript.onload = () => {
+          PolitePop({
+            politePopHtml: "<p>Hey, ¿te interesa saber más sobre trabajo remoto desde Chile hacia el extranjero?</p>",
+            politePopYesText: "Sí, claro!",
+            politePopNoText: "No gracias",
+            exitIntentPopHtml: "<p>Hey, ¿te interesa saber más sobre trabajo remoto desde Chile hacia el extranjero?</p>",
+            exitIntentPopYesText: "Sí, claro!",
+            exitIntentPopNoText: "No gracias",
+            modalHtml: "<p>Estoy creando contenido sobre esta temática. Suscríbete para no perderte el contenido.</p>",
+            modalSubscribeButtonText: "Suscríbeme!",
+            modalShowNameField: false,
+            signupFormAction: "https://app.convertkit.com/forms/3852435/subscriptions",
+            newEmailSignupSuccessMessage: "Listo! 🎉 Revisa tu correo.",
+            newEmailSignupErrorMessage: "Ocurrió un error al suscribirte"
+          });
+        }
+        document.head.append(politeScript);
       }
-      document.head.append(politeScript);
     </script>
     <!-- /Politepop -->
   </head>
