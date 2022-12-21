@@ -40,5 +40,8 @@
   },
   "devDependencies": {
     "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true
   }
 }
