@@ -74,14 +74,16 @@ function App() {
       <footer>
         <section>
           <p>
-            Made with <Emoji value="❤️" /> by{" "}
+            Un proyecto de{" "}
             <a
-              href="https://gomezespejo.com"
+              href="https://trabajoremoto.cl"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Nicolás Gómez
+              TrabajoRemoto.cl
             </a>
+            {" "}
+            <Emoji value="❤️" />
           </p>
           <p>
             Source Code in{" "}
