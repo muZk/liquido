@@ -2,6 +2,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import Emoji from "./Emoji";
 import Loading from "./Loading";
 import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
+import HeaderBar from "./HeaderBar";
 
 const Result = lazy(() => import("./Result"));
 
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <>
+      <HeaderBar />
       <section className="hero">
         <h1>
           Líquido
