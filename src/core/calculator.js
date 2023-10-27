@@ -1,6 +1,12 @@
 import { calcular, obtenerConfiguracion, configurarDeclaracion } from "tax-cl";
 
-configurarDeclaracion(Math.min(new Date().getFullYear() + 1, 2023));
+// Antes de junio, te importa la operación renta actual.
+// Después de junio, te importa la operación renta del próximo año.
+if (new Date().getMonth() < 6) {
+  configurarDeclaracion(new Date().getFullYear());
+} else {
+  configurarDeclaracion(new Date().getFullYear() + 1);
+}
 
 const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
 
