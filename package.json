@@ -3,7 +3,6 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -40,6 +39,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/plugin-transform-async-generator-functions": "^7.23.2",
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "react-snap": "^1.23.0"
   },
   "reactSnap": {
