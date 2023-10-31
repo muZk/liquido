@@ -5,7 +5,7 @@
 
 Calculadora que te permite estimar cual será **tu sueldo líquido** REAL cuando trabajas desde Chile 🇨🇱 para una empresa de USA 🇺🇸.
 
-Live en: https://calculadora.trabajoremoto.cl/
+Live en: https://app.trabajoremoto.cl/
 
 ## Cómo se hace el cálculo
 
@@ -20,7 +20,6 @@ Cuando trabajas de manera remota desde CHILE para USA, ocurre lo siguiente:
 Es decir, hay muchas cosas que afectan en tu sueldo líquido real. Esta calculadora se preocupa de entregarte un número realista de lo que vas a recibir con base a los siguientes supuestos:
 
 - El valor dólar que te da el banco es el mismo que aparece en el SII (no siempre es así).
-- Te pagan por transferencia internacional. El banco gringo te cobra `20 USD` y el Chileno `0`.
 - Par los impuestos y cotizaciones, [ver aquí](https://github.com/muZk/impuestos#supuestos-para-el-c%C3%A1lculo).
 
 ## Finalmente... el cálculo:
@@ -56,3 +55,5 @@ Luego, el monto de la boleta lo calculas así:
 1. Obtén el valor del dólar [según el SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2021.htm) para el día en que te llegó la plata.
 2. El monto en dólares que te llegó, multiplícalo por el valor obtenido.
 3. Haz la boleta de honorarios por ese monto. En la descripción, coloca "Equivalente a X USD" (donde `X` es lo que te llegó).
+
+Puedes ver un tutorial completo y con imágenes [aquí](https://trabajoremoto.cl/como-hacer-boleta-honorarios-para-el-extranjero).
