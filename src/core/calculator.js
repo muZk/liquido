@@ -1,16 +1,23 @@
 import { calcular, obtenerConfiguracion, configurarDeclaracion } from "tax-cl";
 
-// Antes de junio, te importa la operación renta actual.
-// Después de junio, te importa la operación renta del próximo año.
-if (new Date().getMonth() < 6) {
-  configurarDeclaracion(new Date().getFullYear());
-} else {
-  configurarDeclaracion(new Date().getFullYear() + 1);
+configurarDeclaracion(getDefaultYear());
+
+export function getDefaultYear() {
+  // Antes de junio, te importa la operación renta actual.
+  // Después de junio, te importa la operación renta del próximo año.
+  if (new Date().getMonth() < 6) {
+    return new Date().getFullYear();
+  }
+
+  return new Date().getFullYear() + 1
 }
 
-const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
+export function setYear(year) {
+  configurarDeclaracion(year || getDefaultYear());
+}
 
 export function getTakeHomeSalary(usdMonthlyIncome, usdToClp) {
+  const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
   const clpMonthlyIncome = usdMonthlyIncome * usdToClp.value;
   const taxes = calcular(clpMonthlyIncome);
   const { deuda: debt, retencion } = taxes;
@@ -29,6 +36,7 @@ export function getTakeHomeSalary(usdMonthlyIncome, usdToClp) {
 }
 
 export function getTakeHomeSalaryPartial(usdMonthlyIncome, usdToClp) {
+  const { RETENCION, COBERTURA_PARCIAL } = obtenerConfiguracion();
   const clpMonthlyIncome = usdMonthlyIncome * usdToClp.value;
   const taxes = calcular(clpMonthlyIncome);
   const { deudaModalidadParcial: debt, retencion } = taxes;

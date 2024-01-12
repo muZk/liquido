@@ -1,12 +1,15 @@
 import { useState, useEffect, Suspense, lazy } from "react";
+import { configurarDeclaracion } from "tax-cl";
 import Emoji from "./Emoji";
 import Loading from "./Loading";
-import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
 import HeaderBar from "./HeaderBar";
+import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
+import { getDefaultYear } from "../core/calculator";
 
 const Result = lazy(() => import("./Result"));
 
 function App() {
+  const [year, setYear] = useState(() => getDefaultYear());
   const [income, setIncome] = useState(4000);
   const [showResults, setShowResults] = useState(false);
   const [usd, setUsd] = useState(
@@ -19,11 +22,21 @@ function App() {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const incomeParam = parseInt(queryParams.get("income"));
+    const yearParam = parseInt(queryParams.get("year"));
+
     if (incomeParam) {
       setIncome(incomeParam);
       setShowResults(true);
     }
+
+    if (yearParam) {
+      setYear(yearParam);
+    }
   }, []);
+
+  useEffect(() => {
+    configurarDeclaracion(year);
+  }, [year]);
 
   useEffect(() => {
     fetchUsdValue().then(setUsd);
