@@ -14,7 +14,7 @@ function App() {
   const [showResults, setShowResults] = useState(false);
   const [usd, setUsd] = useState(
     {
-      valor: DEFAULT_USD_VALUE,
+      value: DEFAULT_USD_VALUE,
       origin: 'default',
     }
   );
