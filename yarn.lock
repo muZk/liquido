@@ -9354,10 +9354,10 @@ tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   resolved "https://registry.npmjs.org/tapable/-/tapable-2.2.1.tgz"
   integrity sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==
 
-tax-cl@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tax-cl/-/tax-cl-1.2.0.tgz#1011c14cb6737f024f5ec669fa8ae5907898ff4f"
-  integrity sha512-hZf17xcwALFcFU7VFYoxy065a3v+QZQQ63o+ZTtv0wvWBkXgOGiKTxyBmPCTBVOxJ86EwYMKANY+c38EI5RlDA==
+tax-cl@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/tax-cl/-/tax-cl-1.3.1.tgz#2e112425cc369d80972dd772a11374c8c1395941"
+  integrity sha512-/L73wAGeUFdLEJVsnXBLVr5CKFzJ4kDYcRv9gvjMGvzbCRwdGGMyEy8rzoOqT7zpzuXshNl1sMGFoawZ31E1WA==
 
 temp-dir@^2.0.0:
   version "2.0.0"

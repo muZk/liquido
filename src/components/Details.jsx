@@ -4,7 +4,7 @@ import Amount from "./Amount";
 import Assumptions from "./Assumptions";
 import Emoji from "./Emoji";
 
-function Detail({ annualIncome, retention, debt, takeHome }) {
+function Detail({ annualIncome, retention, debt, takeHome, usd }) {
   if (debt > 0) {
     return (
       <>
@@ -24,7 +24,7 @@ function Detail({ annualIncome, retention, debt, takeHome }) {
           </code>
         </p>
         <p>
-          Finalmente, tu sueldo líquido mensual es <Amount success value={takeHome.value} />
+          Finalmente, tu sueldo líquido mensual es <Amount success value={takeHome.value} /> ~<code>USD{formatAmount(takeHome.value / usd.value)}</code>
         </p>
       </>
     );
@@ -48,7 +48,7 @@ function Detail({ annualIncome, retention, debt, takeHome }) {
         </code>
       </p>
       <p>
-        Finalmente, tu sueldo líquido mensual es <Amount success value={takeHome.value} />
+        Finalmente, tu sueldo líquido mensual es <Amount success value={takeHome.value} /> ~<code>USD{formatAmount(takeHome.value / usd.value)}</code>
       </p>
     </>
   );
@@ -102,6 +102,7 @@ export default function Details({ takeHome, takeHomePartial }) {
           debt={deuda}
           annualIncome={sueldoAnual}
           takeHome={takeHome}
+          usd={usd}
         />
         <h3>Modalidad parcial</h3>
         <p>
@@ -114,6 +115,7 @@ export default function Details({ takeHome, takeHomePartial }) {
           debt={deudaModalidadParcial}
           annualIncome={sueldoAnual}
           takeHome={takeHomePartial}
+          usd={usd}
         />
         <Assumptions assumptions={takeHome.assumptions} />
       </section>

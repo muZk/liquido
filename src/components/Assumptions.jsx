@@ -23,10 +23,6 @@ export default function Assumptions({ assumptions }) {
           ({getUsdDetails()})
         </li>
         <li>
-          Te pagan en dólares, y te transfieren mediante{" "}
-          <a href="https://transferwise.com/es/help/articles/2553074/pagando-mediante-swift" target="_blank" rel="noreferrer">transferencia bancaria internacional SWIFT</a>.
-        </li>
-        <li>
           Tu banco no te cobra comisión por recibir los dólares.
         </li>
         <li>
