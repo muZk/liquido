@@ -78,7 +78,7 @@ export default function Details({ takeHome, takeHomePartial }) {
         </h2>
         <p>
           Para el estado de Chile eres INDEPENDIENTE (autónomo). Eso quiere decir que mes a mes tienes que hacer
-          una boleta y pagar al SII la retención del <code>{RETENCION * 100}%</code>.
+          una boleta y pagar al SII la retención del <code>{Math.floor(10000 * RETENCION) / 100}%</code>.
         </p>
         <blockquote>
           Esta retención se usa para pagar impuestos y obligaciones legales
@@ -87,7 +87,7 @@ export default function Details({ takeHome, takeHomePartial }) {
         <p>
           En la declaración anual de renta tienes que pagar las cotizaciones 
           obligatorias de SALUD y JUBILACIÓN, cuyos montos dependen de cuánto ganas.
-          Puedes ver el detalle <a href={`https://impuestos.netlify.com/?income=${sueldoMensual}`} target="_blank" rel="noreferrer">aquí</a>
+          Puedes ver el detalle <a href={`https://impuestos.netlify.app/?income=${sueldoMensual}`} target="_blank" rel="noreferrer">aquí</a>
         </p>
         <h3>Ahora si... el cálculo</h3>
         <p>
