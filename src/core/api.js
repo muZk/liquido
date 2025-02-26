@@ -1,5 +1,5 @@
 
-export const DEFAULT_USD_VALUE = 850;
+export const DEFAULT_USD_VALUE = 949.87; // Promedio del 2024 considerando último día de cada mes
 
 const apiKeySbif = process.env.REACT_APP_SBIF_API_KEY;
 

@@ -4,7 +4,7 @@ import Amount from "./Amount";
 import Assumptions from "./Assumptions";
 import Emoji from "./Emoji";
 
-function Detail({ annualIncome, retention, debt, takeHome, usd }) {
+function Detail({ annualIncome, retention, debt, takeHome, usd, year }) {
   if (debt > 0) {
     return (
       <>
@@ -65,6 +65,7 @@ export default function Details({ takeHome, takeHomePartial }) {
       sueldoAnual,
       RETENCION,
       COBERTURA_PARCIAL,
+      operacionRenta,
     },
   } = takeHome;
 
@@ -78,14 +79,14 @@ export default function Details({ takeHome, takeHomePartial }) {
         </h2>
         <p>
           Para el estado de Chile eres INDEPENDIENTE (autónomo). Eso quiere decir que mes a mes tienes que hacer
-          una boleta y pagar al SII la retención del <code>{Math.floor(10000 * RETENCION) / 100}%</code>.
+          una boleta y pagar al SII la retención del <code>{Math.floor(10000 * RETENCION) / 100}%</code> (retención año {operacionRenta - 1}).
         </p>
         <blockquote>
           Esta retención se usa para pagar impuestos y obligaciones legales
           tales como AFP y salud (Fonasa o Isapre) en la "operación renta".
         </blockquote>
         <p>
-          En la declaración anual de renta tienes que pagar las cotizaciones 
+          En la declaración anual de renta (año {operacionRenta}) tienes que pagar las cotizaciones 
           obligatorias de SALUD y JUBILACIÓN, cuyos montos dependen de cuánto ganas.
           Puedes ver el detalle <a href={`https://impuestos.netlify.app/?income=${sueldoMensual}`} target="_blank" rel="noreferrer">aquí</a>
         </p>

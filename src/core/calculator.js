@@ -3,12 +3,7 @@ import { calcular, obtenerConfiguracion, configurarDeclaracion } from "tax-cl";
 configurarDeclaracion(getDefaultYear());
 
 export function getDefaultYear() {
-  // Antes de junio, te importa la operación renta actual.
-  // Después de junio, te importa la operación renta del próximo año.
-  if (new Date().getMonth() < 6) {
-    return new Date().getFullYear();
-  }
-
+  // Digamos que te importa la operación renta del próximo año
   return new Date().getFullYear() + 1
 }
 
