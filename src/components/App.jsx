@@ -3,7 +3,7 @@ import { configurarDeclaracion } from "tax-cl";
 import Emoji from "./Emoji";
 import Loading from "./Loading";
 import HeaderBar from "./HeaderBar";
-import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
+import { DEFAULT_USD_VALUE, DEFAULT_USD_YEAR, fetchUsdValue } from "../core/api";
 import { getDefaultYear } from "../core/calculator";
 
 const Result = lazy(() => import("./Result"));
@@ -15,14 +15,18 @@ function App() {
   const [usd, setUsd] = useState(
     {
       value: DEFAULT_USD_VALUE,
-      origin: 'default',
+      origin: 'average',
+      year: DEFAULT_USD_YEAR,
     }
   );
+  const [customUsd, setCustomUsd] = useState("");
+  const effectiveUsd = customUsd > 0 ? { value: Number(customUsd), origin: 'manual' } : usd;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const incomeParam = parseInt(queryParams.get("income"));
     const yearParam = parseInt(queryParams.get("year"));
+    setCustomUsd(queryParams.get("usd") || "");
 
     if (incomeParam) {
       setIncome(incomeParam);
@@ -80,10 +84,26 @@ function App() {
             <Emoji value="✨" /> Calcular
           </button>
         </div>
+        <p>
+          <label htmlFor="usd">
+            Valor dólar (opcional, para probar escenarios):
+          </label>
+        </p>
+        <div className="inputs">
+          <input
+            id="usd"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder={usd.value.toFixed(2)}
+            value={customUsd}
+            onChange={(event) => setCustomUsd(event.target.value)}
+          />
+        </div>
       </section>
       {showResults && (
         <Suspense fallback={<Loading />}>
-          <Result income={income} usd={usd} />
+          <Result income={income} usd={effectiveUsd} />
         </Suspense>
       )}
       <footer>

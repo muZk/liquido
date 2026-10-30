@@ -1,5 +1,8 @@
 
-export const DEFAULT_USD_VALUE = 949.87; // Promedio del 2024 considerando último día de cada mes
+// Promedio 2025 de los promedios mensuales publicados por el SII
+// https://www.sii.cl/valores_y_fechas/dolar/dolar2025.htm
+export const DEFAULT_USD_VALUE = 951.25;
+export const DEFAULT_USD_YEAR = 2025;
 
 const apiKeySbif = process.env.REACT_APP_SBIF_API_KEY;
 
@@ -35,14 +38,30 @@ export async function fetchUsdValue() {
       const resultApi = await fetch(secondaryApi.url)
       const json = await resultApi.json();
       return {
-        value: parseFloat(json.Dolares[0].Valor),
+        value: parseFloat(json.Dolares[0].Valor.replace('.', '').replace(',', '.')), // viene como "1.000,76"
         origin: secondaryApi.origin,
       }
     } catch (e) {
-      return {
-        value: DEFAULT_USD_VALUE,
-        origin: 'default'
-      }
+      return fetchPastYearAverage();
+    }
+  }
+}
+
+async function fetchPastYearAverage() {
+  const year = new Date().getFullYear() - 1;
+  try {
+    const result = await fetch(`${principalApi.url}${year}`);
+    const { serie } = await result.json();
+    return {
+      value: serie.reduce((sum, { valor }) => sum + valor, 0) / serie.length,
+      origin: 'average',
+      year,
+    }
+  } catch (e) {
+    return {
+      value: DEFAULT_USD_VALUE,
+      origin: 'average',
+      year: DEFAULT_USD_YEAR,
     }
   }
 }
