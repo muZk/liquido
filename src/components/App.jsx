@@ -19,14 +19,11 @@ function App() {
       year: DEFAULT_USD_YEAR,
     }
   );
-  const [customUsd, setCustomUsd] = useState("");
-  const effectiveUsd = customUsd > 0 ? { value: Number(customUsd), origin: 'manual' } : usd;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const incomeParam = parseInt(queryParams.get("income"));
     const yearParam = parseInt(queryParams.get("year"));
-    setCustomUsd(queryParams.get("usd") || "");
 
     if (incomeParam) {
       setIncome(incomeParam);
@@ -84,26 +81,10 @@ function App() {
             <Emoji value="✨" /> Calcular
           </button>
         </div>
-        <p>
-          <label htmlFor="usd">
-            Valor dólar (opcional, para probar escenarios):
-          </label>
-        </p>
-        <div className="inputs">
-          <input
-            id="usd"
-            type="number"
-            min="0"
-            step="0.01"
-            placeholder={usd.value.toFixed(2)}
-            value={customUsd}
-            onChange={(event) => setCustomUsd(event.target.value)}
-          />
-        </div>
       </section>
       {showResults && (
         <Suspense fallback={<Loading />}>
-          <Result income={income} usd={effectiveUsd} />
+          <Result income={income} usd={usd} />
         </Suspense>
       )}
       <footer>
