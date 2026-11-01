@@ -10,7 +10,7 @@ export default function Assumptions({ assumptions }) {
     } else if (usd.origin === 'SBIF') {
       return <span>Valor entregado por <a href="https://www.sbif.cl" target="_blank" rel="noreferrer">CMF Bancos</a></span>
     } else {
-      return 'Valor promedio del dólar durante el año 2024'
+      return `Valor promedio del dólar durante el año ${usd.year}`
     }
   }
 
