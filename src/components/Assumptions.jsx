@@ -9,8 +9,10 @@ export default function Assumptions({ assumptions }) {
       return  <a href="https://trabajoremoto.cl/herramientas/dolar/" target="_blank" rel="noreferrer">valor dólar hoy según Banco Central</a>
     } else if (usd.origin === 'SBIF') {
       return <span>Valor entregado por <a href="https://www.sbif.cl" target="_blank" rel="noreferrer">CMF Bancos</a></span>
+    } else if (usd.origin === 'manual') {
+      return 'valor ingresado por ti'
     } else {
-      return 'Valor promedio del dólar durante el año 2024'
+      return `Valor promedio del dólar durante el año ${usd.year}`
     }
   }
 
