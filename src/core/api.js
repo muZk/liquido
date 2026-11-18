@@ -19,7 +19,7 @@ const secondaryApi = {
 async function fetchSerie(path = '') {
   for (const url of indicadoresApis) {
     try {
-      const result = await fetch(`${url}${path}`);
+      const result = await fetch(`${url}${path}`, { signal: AbortSignal.timeout(5000) });
       const { serie } = await result.json();
       if (serie.length) return serie;
     } catch {}
@@ -38,7 +38,7 @@ export async function fetchUsdValue() {
   } catch {}
 
   try {
-    const resultApi = await fetch(secondaryApi.url)
+    const resultApi = await fetch(secondaryApi.url, { signal: AbortSignal.timeout(5000) });
     const json = await resultApi.json();
     return {
       value: parseFloat(json.Dolares[0].Valor.replace('.', '').replace(',', '.')), // viene como "1.000,76"
