@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import { configurarDeclaracion } from "tax-cl";
 import Emoji from "./Emoji";
 import Loading from "./Loading";
-import { DEFAULT_USD_VALUE, fetchUsdValue } from "../core/api";
+import { DEFAULT_USD_VALUE, DEFAULT_USD_YEAR, fetchUsdValue } from "../core/api";
 import { getDefaultYear } from "../core/calculator";
 
 const Result = lazy(() => import("./Result"));
@@ -14,7 +14,8 @@ function App() {
   const [usd, setUsd] = useState(
     {
       value: DEFAULT_USD_VALUE,
-      origin: 'default',
+      origin: 'average',
+      year: DEFAULT_USD_YEAR,
     }
   );
 
