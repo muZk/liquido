@@ -2,7 +2,6 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import { configurarDeclaracion } from "tax-cl";
 import Emoji from "./Emoji";
 import Loading from "./Loading";
-import HeaderBar from "./HeaderBar";
 import { DEFAULT_USD_VALUE, DEFAULT_USD_YEAR, fetchUsdValue } from "../core/api";
 import { getDefaultYear } from "../core/calculator";
 
@@ -56,7 +55,6 @@ function App() {
 
   return (
     <>
-      <HeaderBar />
       <section className="hero">
         <h1>
           Líquido
